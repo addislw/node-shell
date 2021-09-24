@@ -1,23 +1,15 @@
-process.stdout.write('prompt > ');
+// const pwd = require("./pwd.js");
+const mod;
+// const fs = require("fs");
 
+// process.stdout.write("prompt > ");
 
-/*
-process.stdin.on('data', (data) => {
-  const cmd = data.toString().trim();
-
-  process.stdout.write('You typed: ' + cmd); 
-  
-  // process.stdout.write('\nprompt > '); 
-})
-*/
-
-process.stdin.on('data', (data) => {
-  const cmd = data.toString().trim();
-
-  process.stdout.write(process.env[`${cmd.toUpperCase()}`]); 
-  
-  // process.stdout.write('\nprompt > '); 
-})
-
-
-
+function outPut() {
+  process.stdout.write("prompt > ");
+  let cmd = process.stdin.on("data", (data) => {
+    return data.toString().trim();
+  });
+  co
+  return require(`./${cmd}.js`);
+}
+outPut();
