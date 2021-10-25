@@ -1,11 +1,13 @@
+// function pwd() {
+//   process.stdout.write(process.cwd());
+//   process.stdout.write("\nprompt > ");
+// }
+const done = require("./bash");
+
+
 function pwd() {
-  return process.stdin.on("data", (data) => {
-    const cmd = data.toString().trim();
-
-    process.stdout.write(process.env[`${cmd.toUpperCase()}`]);
-
-    process.stdout.write("\nprompt > ");
-  });
+  const workingDirectory = process.cwd();
+  done(workingDirectory);
 }
 
 module.exports = pwd();
